@@ -1,0 +1,89 @@
+h1 {
+    color:aliceblue;
+}
+
+caption {
+    color:aliceblue;
+}
+
+body {
+    background-color: rgb(3, 3, 3);
+  }
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    table-layout: auto;
+    width: 180px; 
+    text-align: center;
+    padding: 6px;
+    border: 10px solid;
+    background-color: rgba(49, 49, 58, 0.986);
+}
+
+th {
+    text-align: center;
+    background-color: rgba(15, 15, 17, 0.986);
+    color:rgb(190, 200, 218);
+    border: 2px;
+    border-color: black;
+}
+
+td {
+    text-align: center;
+    background-color: rgba(15, 15, 17, 0.986);
+    color:rgb(54, 97, 179);
+    border: 2px;
+    border-color: black;
+
+}
+td:hover {
+    color: rgb(115, 160, 245);
+}
+
+form {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color:azure;
+    background-color: rgba(49, 49, 58, 0.986);
+}
+
+.admin {
+    text-align: center;
+    margin:auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a.admin {
+    display:block;
+    text-align: center;
+}
+
+
+a.navigation {
+text-decoration: none;
+text-align: center;
+margin-left: auto;
+margin-right: auto;
+line-height: 3;
+color: black;
+border-radius: 2px;
+padding: 5px;
+}
+
+a.navigation:link, a.navigation:visited, a.navigation:focus {
+text-decoration: none;
+background: rgb(151, 151, 151);
+}
+
+a.navigation:hover {
+background: rgb(100, 100, 100);
+}
+
+a.navigation:active {
+text-decoration: none;
+background: rgb(115, 160, 245);
+color: white;
+}

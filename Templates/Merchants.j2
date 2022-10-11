@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>Merchants</title>
+        <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='/css/style.css') }}">
+    </head>
+    <body>
+        <h1>SkyrimSearch</h1>
+        <div class="admin">
+        <a href="/Merchants" class="navigation">Merchants</a>
+        <a href="/Items" class="navigation">Items</a>
+        <a href="/Merchants_Items" class="navigation">Merchants Items</a>
+        <a href="/Categories" class="navigation">Categories</a>
+        <a href="/Merchants_Categories" class="navigation">Merchants Categories</a>
+        <a href="/Locations" class="navigation">Locations</a>
+        <a href="/Enchantments" class="navigation">Enchantments</a>
+        </div>
+        
+        <div id='insert'>
+            <form id='Add_Merchant' action='/Merchants' method='POST'>
+                <legend>New Merchant</legend>
+                <fieldset>
+                    <label>Name:</label><input type="text" name="merchant_name" required>
+                    <label>Race:</label><input type="text" name="race" required>
+                    <label>Shop Name:</label><input type="text" name="shop_name" required>
+                    <label>Gold:</label><input type="text" name="gold" required>
+                    <label>Location</label>
+                        <select name="location">
+                             {% for location in location_data %}
+                                <option value='{{ location.locationID }}'>{{ location.location_name }}</option>
+                            {% endfor %}
+                        </select>
+                </fieldset>
+                    <input type='submit' value='Add' name='Add_Merchant'>
+                    <a href='/Merchants'><input type='button' value='Cancel'></a> 
+            </form>
+        </div>
+
+        <div id = 'display'>
+            <table border='1' cellpadding='5'>
+                <caption>Merchants</caption>
+                {% if data %}
+                    <thead>
+                        <tr>
+                            {% for key in data[0].keys() %} 
+                            <th>{{ key }}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for merchant in data %}
+                        <tr>
+                            {% for key in merchant.keys() %}
+                            <td> {{merchant[key]}} </td>
+                            {% endfor %}
+                            <td><a href="/Merchants_delete/{{merchant.merchantID}}" class="btn btn-default">Delete</a></td> 
+                            <td><a href="/Merchants_Items/{{merchant.merchantID}}">Items</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                {% endif %}
+            </table>
+        </div>
+    </body>
+</html>
+        
+                
